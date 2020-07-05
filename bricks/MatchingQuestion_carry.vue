@@ -108,7 +108,7 @@
         this.exemplar(itemB_id)      //запускаем третью фазу carry или, если экземпляр не сгенегирован, то вКЛЮЧАЕМ предупреждение о необходимости начинать выбор с левой колонки.
       },
       itemAColor_firstClick(index) {  //цвет itemA по первому клику
-        return `color${index}`
+        return `color-bg${index}`
       },
       itemAColor(index, itemA_id) {
         //зависимость цвета itemA от index (выбор цвета) и наличия данного itemA_id в response (включенность цвета)
@@ -166,6 +166,41 @@
 
   .color6 {
     color: #faf248;
+  }
+
+  .color-bg0 {
+    color: #c10ce2;
+    background-color: rgba(255, 248, 220, 0.7);
+  }
+
+  .color-bg1 {
+    color: red;
+    background-color: rgba(255, 248, 220, 0.7);
+  }
+
+  .color-bg2 {
+    color: blue;
+    background-color: rgba(255, 248, 220, 0.7);
+  }
+
+  .color-bg3 {
+    color: #77ff00;
+    background-color: rgba(255, 248, 220, 0.7);
+  }
+
+  .color-bg4 {
+    color: #eab909;
+    background-color: rgba(255, 248, 220, 0.7);
+  }
+
+  .color-bg5 {
+    color: #0fd7af;
+    background-color: rgba(255, 248, 220, 0.7);
+  }
+
+  .color-bg6 {
+    color: #faf248;
+    background-color: rgba(255, 248, 220, 0.7);
   }
 
   .groups_wrapper {
