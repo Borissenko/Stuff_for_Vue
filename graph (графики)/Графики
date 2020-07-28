@@ -1,0 +1,41 @@
+ Графики
+
+Установка:
+  npm i vue-echarts
+  https://www.npmjs.com/package/vue-echarts
+
+Импортируемый  import 'echarts/lib/chart/radar'  - СООТВЕТСТВУЕТ ТРЕБУЕМОМУ ТИПУ ГРАФИКА.
+
+
+Настройки:
+   https://echarts.apache.org/examples/en/index.html#chart-type-radar
+   https://echarts.apache.org/en/option.html#radar.indicator.name
+
+
+Создание адаптивной перерисовки графика:
+//ChartWrapper.vue
+
+  <chart v-if="chartReincarnation"/>
+
+  export default {
+    import Chart from '@/components/ResultUtils/Chart'
+    components: {
+      Chart
+    },
+
+    data: () => ({
+      chartReincarnation: true
+    }),
+    methods: {
+      reportWindowSize() {
+        this.chartReincarnation = false
+        this.$nextTick(() => this.chartReincarnation = true)
+      }
+    },
+    created() {
+      window.addEventListener('resize', this.reportWindowSize);
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.reportWindowSize)
+    }
+  }
