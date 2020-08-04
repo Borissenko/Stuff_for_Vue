@@ -5,6 +5,7 @@
              :indicatorNames="chartData.indicatorNames"
              :knowledgeChartData="chartData.knowledgeChartData"
              :interestsChartData="chartData.interestsChartData"
+             @pickedSkill="pickedSkillIsOpen"
              class="conclusion-chart__chart"
       />
     </div>
@@ -30,6 +31,9 @@
       reportWindowSize() {
         this.calmDownAfterResizing = false
         this.$nextTick(() => this.calmDownAfterResizing = true)
+      },
+      pickedSkillIsOpen(skillName) {
+        console.log('skillName ==', skillName)
       }
     },
     created() {

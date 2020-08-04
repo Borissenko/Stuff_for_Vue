@@ -1,6 +1,8 @@
 <template>
   <div class="chart-wrapper">
-    <echarts :options="chartOptions"/>
+    <echarts :options="chartOptions"
+             @click="onChartEvent"
+    />
   </div>
 </template>
 
@@ -372,6 +374,15 @@
     data: () => ({
       windowInnerWidth: null
     }),
+    methods: {
+      onChartEvent(w) {
+        this.$emit('pickedSkill', w.event.target.eventData.name)
+        // event.event.target.eventData.name = "Создание↵и развитие↵продукта↵"
+        // event.event.target.eventData.radarIndex = 0
+        // event.event.target.scale = [1, 1]
+        // event.event.target.style.text =  "Создание↵и развитие↵продукта↵"
+      }
+    },
     created() {
       this.windowInnerWidth = window.innerWidth
     }
